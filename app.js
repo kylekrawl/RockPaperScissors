@@ -4,12 +4,18 @@ var playerWinMessages = [
     "What, you want a medal or something?",
     "Oh wow, you beat probability. Great job.",
     "You win. Good for you, I guess.",
-    "I don't even like The Big Bang Theory..."
+    "I don't even like The Big Bang Theory...",
+    "Don't get cocky, kid.",
+    "You cheated."
 ]
 var playerLossMessages = [
     "Just give up. You're embarrassing yourself.",
     "Pathetic.",
-    "Nice attempt. Well, not really."
+    "Nice attempt. Well, not really.",
+    "Terrible.",
+    "It's like all you do is fail.",
+    "Perhaps the worst failure in the history of failures."
+
 ]
 var playerDrawMessages = [
     "How boring.",
@@ -112,7 +118,7 @@ function getPlayerStatus(playerChoice, computerChoice) {
     drawMessage('computerChoiceMessage', `Computer chooses ${computerChoice}.`)
 
     var playerLossConditions = {
-        // key is player choice, value is computer choice
+        // key is player choice, value is array of computer choices resulting in player loss
         'paper': ['scissors', 'lizard'],
         'rock': ['Spock', 'paper'],
         'scissors': ['rock', 'Spock'],

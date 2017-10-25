@@ -6,6 +6,7 @@
 	<title>Rock Paper Scissors Lizard Spock</title>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
 	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|VT323" rel="stylesheet">
 	<link rel="stylesheet" href="assets/style.css">
 </head>
 
@@ -30,35 +31,37 @@
 		</div>
 		<div class="row buttons-row text-center">
 
-			<div class="col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6">
+			<div class="col-xs-12 col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6">
 
 				<div class="row">
 					<div class="col-md-12">
 						<div class="button-wrapper flex v-center h-center">
-							<button onclick="play('rock')">rock</button>
-							<button onclick="play('paper')">paper</button>
-							<button onclick="play('scissors')">scissors</button>
-							<button onclick="play('lizard')">lizard</button>
-							<button onclick="play('Spock')">Spock</button>
+							<!--TODO: Fix display on x-small screens-->
+							<button class="btn-main" onclick="play('rock')">rock</button>
+							<button class="btn-main" onclick="play('paper')">paper</button>
+							<button class="btn-main" onclick="play('scissors')">scissors</button>
+							<button class="btn-main" onclick="play('lizard')">lizard</button>
+							<button class="btn-main" onclick="play('Spock')">Spock</button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="row status-row text-center">
-			<div class="flex v-center h-center">
-				<div class="messages-wrapper flex v-center h-center">
-					<div class="content-wrapper">
-						<h4 class="choice-message" id="playerChoiceMessage"></h4>
-						<h4 class="choice-message" id="computerChoiceMessage"></h4>
-						<h3 class="status-message" id="statusMessagePrimary"></h3>
-						<h4 class="status-message" id="statusMessageSecondary"></h4>
+			<div class="col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6">
+				<div class="flex v-center h-center">
+					<div class="messages-wrapper flex v-center h-center">
+						<div class="content-wrapper">
+							<h4 class="choice-message" id="playerChoiceMessage"></h4>
+							<h4 class="choice-message" id="computerChoiceMessage"></h4>
+							<div class="primary-status">
+								<h3 class="status-message" id="statusMessagePrimary"></h3>
+							</div>
+							<h4 class="status-message computer-taunt" id="statusMessageSecondary"></h4>
+							<button class="btn-main" onclick="setInitialConditions()">Reset Scores</button>
+						</div>
 					</div>
 				</div>
-			</div>
-			<!-- add play again button -->
-			<div>
-				<button onclick="setInitialConditions()">Reset Scores</button>
 			</div>
 		</div>
 	</div>

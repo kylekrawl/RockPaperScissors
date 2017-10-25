@@ -3,48 +3,62 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Rock Paper Scissors</title>
+	<title>Rock Paper Scissors Lizard Spock</title>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
 	 crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
 	<!--write html below this line-->
 	<div class="container-fluid">
-		<div class="row text-center">
-			<div class="col-md-12">
-				<h1>Rock, Paper, Scissors</h1>
-				<div>
-					<p>Player Victories: <span id="playerVictoryCounter"></span></p>
-					<p>Computer Victories: <span id="computerVictoryCounter"></span></p>
+		<div class="row header-row text-center">
+			<div class="col-sm-12 col-md-12">
+				<h1 class="main-title">rock, paper, scissors...and lizard and Spock, whatever</h1>
+				<h2 class="main-emoticon">: |</h2>
+				<div class="score-counter flex v-center h-center">
+					<div class="content-wrapper">
+						<p>Player Victories:
+							<span id="playerVictoryCounter"></span>
+						</p>
+						<p>Computer Victories:
+							<span id="computerVictoryCounter"></span>
+						</p>
+					</div>
 				</div>
+			</div>
+		</div>
+		<div class="row buttons-row text-center">
+
+			<div class="col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6">
+
 				<div class="row">
-
-					<div class="col-md-offset-3 col-md-6">
-
-						<div class="row">
-							<div class="col-md-4">
-								<button onclick="play('rock')">Rock</button>
-							</div>
-							<div class="col-md-4">
-								<button onclick="play('paper')">Paper</button>
-							</div>
-							<div class="col-md-4">
-								<button onclick="play('scissors')">Scissors</button>
-							</div>
+					<div class="col-md-12">
+						<div class="button-wrapper flex v-center h-center">
+							<button onclick="play('rock')">rock</button>
+							<button onclick="play('paper')">paper</button>
+							<button onclick="play('scissors')">scissors</button>
+							<button onclick="play('lizard')">lizard</button>
+							<button onclick="play('Spock')">Spock</button>
 						</div>
 					</div>
 				</div>
-				<div>
-					<h4 id="playerChoiceMessage"></h4>
-					<h4 id="computerChoiceMessage"></h4>
-					<h3 id="statusMessagePrimary"></h3>
-					<h4 id="statusMessageSecondary"></h3>
+			</div>
+		</div>
+		<div class="row status-row text-center">
+			<div class="flex v-center h-center">
+				<div class="messages-wrapper flex v-center h-center">
+					<div class="content-wrapper">
+						<h4 class="choice-message" id="playerChoiceMessage"></h4>
+						<h4 class="choice-message" id="computerChoiceMessage"></h4>
+						<h3 class="status-message" id="statusMessagePrimary"></h3>
+						<h4 class="status-message" id="statusMessageSecondary"></h4>
+					</div>
 				</div>
-				<!-- add play again button -->
-				<div>
-					<button onclick="setInitialConditions()">Reset Scores</button>
-				</div>
+			</div>
+			<!-- add play again button -->
+			<div>
+				<button onclick="setInitialConditions()">Reset Scores</button>
 			</div>
 		</div>
 	</div>

@@ -1,0 +1,107 @@
+/*
+-------------------
+Grid / Flexbox
+-------------------
+*/
+
+.flex {
+    display: flex;
+}
+
+.flex.v-center {
+    align-items: center;
+}
+
+.flex.h-center {
+    justify-content: center;
+}
+
+.flex.h-left {
+    justify-content: left;
+}
+
+/*
+-------------------
+Base Styles
+-------------------
+*/
+
+body {
+    color: #000;
+    background: rgb(230, 230, 230);
+}
+
+/*
+-------------------
+Typography
+-------------------
+*/
+
+p, h1, h2, h3, h4 {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+-------------------
+Header Row
+-------------------
+*/
+
+.header-row {
+    background: rgb(230, 230, 230);
+}
+
+.main-title {
+    margin: 30px 0 40px;
+}
+
+.score-counter {
+    height: 150px;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+-------------------
+Buttons Row
+-------------------
+*/
+
+.buttons-row {
+    background: rgb(230, 230, 230);
+}
+
+.buttons-row button {
+    margin: 0 20px;
+}
+
+.button-wrapper {
+    height: 150px;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+-------------------
+Status Row
+-------------------
+*/
+
+.status-row {
+    background: rgb(230, 230, 230);
+}
+
+.choice-message {
+    margin: 20px 0;
+}
+
+.status-message {
+    margin: 30px 0;
+}
+
+.messages-wrapper {
+    height: 200px;
+    margin: 0;
+    padding: 0;
+}

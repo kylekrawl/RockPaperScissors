@@ -3,7 +3,8 @@ var computerScore = 0
 var playerWinMessages = [
     "What, you want a medal or something?",
     "Oh wow, you beat probability. Great job.",
-    "You win. Good for you, I guess."
+    "You win. Good for you, I guess.",
+    "I don't even like The Big Bang Theory..."
 ]
 var playerLossMessages = [
     "Just give up. You're embarrassing yourself.",
@@ -11,8 +12,8 @@ var playerLossMessages = [
     "Nice attempt. Well, not really."
 ]
 var playerDrawMessages = [
-    "A draw. How boring.",
-    "I hate tie games.",
+    "How boring.",
+    "I hate tie games."
 ]
 var defaultStatusMessage = "Choose an option, I guess."
 
@@ -63,9 +64,20 @@ function randomArrayChoice(arr) {
     return arr[Math.floor((Math.random() * arr.length))]
 }
 
+function includesItem(item, arr) {
+    var includes = false
+    for(var i = 0; i < arr.length; i++) {
+        arrItem = arr[i]
+        if (item === arrItem) {
+            includes = true
+            break
+        }
+    }
+    return includes
+}
+
 function getPlayerWinMessage() {
     return randomArrayChoice(playerWinMessages)
-    
 }
 
 function getPlayerLossMessage() {
@@ -76,19 +88,20 @@ function getPlayerDrawMessage() {
     return randomArrayChoice(playerDrawMessages)
 }
 
-
-
-
 function randomPlayChoice() {
     var output;
-    var randNum = Math.floor(Math.random() * 3)
+    var randNum = Math.floor(Math.random() * 5)
     console.log(randNum)
     if (randNum === 0) {
         output = 'rock'
-    } else if (randNum === 2) {
+    } else if (randNum === 1) {
         output = 'paper'
-    } else {
+    } else if (randNum === 2) {
         output = 'scissors'
+    } else if (randNum === 3) {
+        output = 'lizard'
+    } else {
+        output = 'Spock'
     }
     return output
 }
@@ -100,15 +113,17 @@ function getPlayerStatus(playerChoice, computerChoice) {
 
     var playerLossConditions = {
         // key is player choice, value is computer choice
-        'rock': 'paper',
-        'paper': 'scissors',
-        'scissors': 'rock'
+        'paper': ['scissors', 'lizard'],
+        'rock': ['Spock', 'paper'],
+        'scissors': ['rock', 'Spock'],
+        'lizard': ['scissors', 'rock'],
+        'Spock': ['paper', 'lizard']
     }
     var output;
 
     if (computerChoice === playerChoice) {
         output = 'draw'
-    } else if (computerChoice === playerLossConditions[playerChoice]) {
+    } else if (includesItem(computerChoice, playerLossConditions[playerChoice])) {
         output = 'loss'
     } else {
         output = 'win'

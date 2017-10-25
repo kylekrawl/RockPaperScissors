@@ -1,16 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
-	<title>SET THE TITLE!!!</title>
-	<!--Might be good to link bootstrap here-->
+	<title>Rock Paper Scissors</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	 crossorigin="anonymous">
 </head>
+
 <body>
 	<!--write html below this line-->
-	
-	
+	<div class="container-fluid">
+		<div class="row text-center">
+			<div class="col-md-12">
+				<h1>Rock, Paper, Scissors</h1>
+				<div>
+					<p>Player Victories: <span id="playerVictoryCounter"></span></p>
+					<p>Computer Victories: <span id="computerVictoryCounter"></span></p>
+				</div>
+				<div class="row">
+
+					<div class="col-md-offset-3 col-md-6">
+
+						<div class="row">
+							<div class="col-md-4">
+								<button onclick="play('rock')">Rock</button>
+							</div>
+							<div class="col-md-4">
+								<button onclick="play('paper')">Paper</button>
+							</div>
+							<div class="col-md-4">
+								<button onclick="play('scissors')">Scissors</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div>
+					<h4 id="playerChoiceMessage"></h4>
+					<h4 id="computerChoiceMessage"></h4>
+					<h3 id="statusMessagePrimary"></h3>
+					<h4 id="statusMessageSecondary"></h3>
+				</div>
+				<!-- add play again button -->
+				<div>
+					<button onclick="setInitialConditions()">Reset Scores</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!--write html above this line-->
 	<!--the following line is used to link your javascript file.-->
 	<script src="app.js"></script>
 </body>
+
 </html>

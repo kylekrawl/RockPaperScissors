@@ -9,7 +9,7 @@ var playerWinMessages = [
     "What, you want a medal or something?",
     "Oh wow, you beat probability. Great job.",
     "You win. Good for you, I guess.",
-    "I don't even *like* The Big Bang Theory...",
+    "I don't even like The Big Bang Theory...",
     "Don't get cocky, kid.",
     "No fair, you cheated."
 ]

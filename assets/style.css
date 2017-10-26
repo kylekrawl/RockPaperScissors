@@ -67,11 +67,14 @@ Buttons Row
     border: 2px solid #fff;
 }
 
-
 .btn-main:active,
 .btn-main:focus {
     outline: none;
-    
+}
+
+.btn-main:hover {
+    border: 2px solid rgb(255, 255, 0);
+    color: rgb(255, 255, 0);
 }
 
 .button-wrapper {
@@ -96,6 +99,7 @@ Status Row
 
 .primary-status {
     padding: 10px;
+    color: rgb(255, 255, 0);
 }
 
 .computer-taunt {

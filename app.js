@@ -27,15 +27,7 @@ var playerDrawMessages = [
 ]
 var defaultStatusMessage = "Choose an option, I guess."
 
-var playerLossConditions = {
-    // Key is player choice, value is array of corresponding computer choices that result in player loss
-    'paper': ['scissors', 'lizard'],
-    'rock': ['Spock', 'paper'],
-    'scissors': ['rock', 'Spock'],
-    'lizard': ['scissors', 'rock'],
-    'Spock': ['paper', 'lizard']
-}
-var reasonsForLoss = {
+var lossConditions = {
     /* 
     Key is losing choice, value is array of objects in which each object.choice describes the winning 
     choice and each object.reason describes the reason for the outcome
@@ -100,20 +92,7 @@ function randomArrayChoice(arr) {
     return arr[Math.floor((Math.random() * arr.length))]
 }
 
-function includesItem(item, arr) {
-    // similar to Array.prototype.includes()
-    var includes = false
-    for (var i = 0; i < arr.length; i++) {
-        arrItem = arr[i]
-        if (item === arrItem) {
-            includes = true
-            break
-        }
-    }
-    return includes
-}
-
-/* 
+/*
    Primary Game Functions
 */
 
@@ -182,7 +161,7 @@ function getPlayerStatus(playerChoice, computerChoice) {
 
     if (computerChoice === playerChoice) {
         output = 'draw'
-    } else if (includesItem(computerChoice, playerLossConditions[playerChoice])) {
+    } else if (isPlayerLossCondition(playerChoice, computerChoice)) {
         output = 'loss'
     } else {
         output = 'win'
@@ -190,12 +169,24 @@ function getPlayerStatus(playerChoice, computerChoice) {
     return output
 }
 
+function isPlayerLossCondition(playerChoice, computerChoice) {
+    var output = false
+    for (var i = 0; i < lossConditions[playerChoice].length; i++) {
+        var choiceObj = lossConditions[playerChoice][i]
+        if (choiceObj.name === computerChoice) {
+            output = true
+            break
+        }
+    }
+    return output
+}
+
 function getOutcomeReason(winningChoice, losingChoice) {
     var output
-    for (var choiceKey in reasonsForLoss) {
+    for (var choiceKey in lossConditions) {
         if (choiceKey === losingChoice) {
-            for (var i = 0; i < reasonsForLoss[choiceKey].length; i++) {
-                var choiceObj = reasonsForLoss[choiceKey][i]
+            for (var i = 0; i < lossConditions[choiceKey].length; i++) {
+                var choiceObj = lossConditions[choiceKey][i]
                 if (choiceObj.name === winningChoice) {
                     output = choiceObj.reason
                     break
@@ -232,6 +223,7 @@ function setInitialConditions() {
     computerScore = 0
     drawMessage('playerChoiceMessage', '')
     drawMessage('computerChoiceMessage', '')
+    drawMessage('outcomeReasonMessage', '')
     drawMessage('statusMessagePrimary', defaultStatusMessage)
     drawMessage('statusMessageSecondary', '')
     updateGameInfo()

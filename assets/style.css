@@ -113,3 +113,15 @@ Status Row
     margin: 0;
     padding: 0;
 }
+
+/*
+-------------------
+Animations
+-------------------
+*/
+
+@keyframes spin {
+    from: {
+        transform: rotate(0deg);
+    }
+}

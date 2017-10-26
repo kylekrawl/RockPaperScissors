@@ -29,10 +29,10 @@ var defaultStatusMessage = "Choose an option, I guess."
 
 var lossConditions = {
     /* 
-    Key is losing choice, value is array of objects in which each object.choice describes the winning 
-    choice and each object.reason describes the reason for the outcome
+    Key is losing choice, value is array of objects in which each Object.name designates the winning 
+    choice and each Object.reason describes the reason for the outcome
     */
-    'paper': [
+    paper: [
         {
             name: 'scissors',
             reason: 'Scissors cut paper.'
@@ -42,7 +42,7 @@ var lossConditions = {
             reason: 'Lizard eats paper.'
         }
     ],
-    'rock': [
+    rock: [
         {
             name: 'Spock',
             reason: 'Spock vaporizes rock.'
@@ -52,7 +52,7 @@ var lossConditions = {
             reason: 'Paper covers rock.'
         }
     ],
-    'scissors': [
+    scissors: [
         {
             name: 'rock',
             reason: 'Rock crushes scissors.'
@@ -62,7 +62,7 @@ var lossConditions = {
             reason: 'Spock smashes scissors.'
         }
     ],
-    'lizard': [
+    lizard: [
         {
             name: 'scissors',
             reason: 'Scissors decapitate lizard.'
@@ -72,7 +72,7 @@ var lossConditions = {
             reason: 'Rock crushes lizard.'
         }
     ],
-    'Spock': [
+    Spock: [
         {
             name: 'paper',
             reason: 'Paper disproves Spock.'
@@ -135,21 +135,7 @@ function play(playerChoice) {
 }
 
 function randomPlayChoice() {
-    var output;
-    var randNum = Math.floor(Math.random() * 5)
-    console.log(randNum)
-    if (randNum === 0) {
-        output = 'rock'
-    } else if (randNum === 1) {
-        output = 'paper'
-    } else if (randNum === 2) {
-        output = 'scissors'
-    } else if (randNum === 3) {
-        output = 'lizard'
-    } else {
-        output = 'Spock'
-    }
-    return output
+    return randomArrayChoice(Object.keys(lossConditions))
 }
 
 function getPlayerStatus(playerChoice, computerChoice) {

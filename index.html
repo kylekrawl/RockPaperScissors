@@ -14,9 +14,9 @@
 	<!--write html below this line-->
 	<div class="container-fluid">
 		<div class="row header-row text-center">
-			<div class="col-sm-12 col-md-12">
+			<div class="col-sm-12">
 				<h1 class="main-title">rock, paper, scissors...and lizard and Spock, whatever</h1>
-				<h2 class="main-emoticon">: |</h2>
+				<h2 class="main-emoticon">:|</h2>
 				<div class="score-counter flex v-center h-center">
 					<div class="content-wrapper">
 						<p>Player Victories:
@@ -30,19 +30,15 @@
 			</div>
 		</div>
 		<div class="row buttons-row text-center">
-
-			<div class="col-xs-12 col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6">
-
-				<div class="row">
-					<div class="col-md-12">
-						<div class="button-wrapper flex v-center h-center">
-							<!--TODO: Fix display on x-small screens-->
-							<button class="btn-main" onclick="play('rock')">rock</button>
-							<button class="btn-main" onclick="play('paper')">paper</button>
-							<button class="btn-main" onclick="play('scissors')">scissors</button>
-							<button class="btn-main" onclick="play('lizard')">lizard</button>
-							<button class="btn-main" onclick="play('Spock')">Spock</button>
-						</div>
+			<div class="col-sm-12">
+				<div class="flex v-center h-center">
+					<div class="button-wrapper">
+						<!--TODO: Fix display on x-small screens-->
+						<button class="btn-main" onclick="play('rock')">rock</button>
+						<button class="btn-main" onclick="play('paper')">paper</button>
+						<button class="btn-main" onclick="play('scissors')">scissors</button>
+						<button class="btn-main" onclick="play('lizard')">lizard</button>
+						<button class="btn-main" onclick="play('Spock')">Spock</button>
 					</div>
 				</div>
 			</div>
@@ -54,9 +50,8 @@
 						<div class="content-wrapper">
 							<h4 class="choice-message" id="playerChoiceMessage"></h4>
 							<h4 class="choice-message" id="computerChoiceMessage"></h4>
-							<div class="primary-status">
-								<h3 class="status-message" id="statusMessagePrimary"></h3>
-							</div>
+							<h4 class="choice-message" id="outcomeReasonMessage"></h4>
+							<h3 class="status-message primary-status" id="statusMessagePrimary"></h3>
 							<h4 class="status-message computer-taunt" id="statusMessageSecondary"></h4>
 							<button class="btn-main" onclick="setInitialConditions()">Reset Scores</button>
 						</div>

@@ -16,10 +16,6 @@ Grid / Flexbox
     justify-content: center;
 }
 
-.flex.h-left {
-    justify-content: left;
-}
-
 /*
 -------------------
 Base Styles
@@ -28,7 +24,7 @@ Base Styles
 
 body {
     color: #fff;
-    background: rgb(0, 0, 255);
+    background: rgb(0, 0, 179);
     font-family: 'Source Code Pro', monospace;
 }
 
@@ -55,8 +51,6 @@ Header Row
 
 .score-counter {
     height: 150px;
-    margin: 0;
-    padding: 0;
     font-size: 1.2em;
 }
 
@@ -67,9 +61,9 @@ Buttons Row
 */
 
 .btn-main {
-    margin: 0 20px;
+    margin: 10px;
     font-size: 2em;
-    background: rgb(0, 0, 255);
+    background: rgb(0, 0, 179);
     border: 2px solid #fff;
 }
 
@@ -100,8 +94,7 @@ Status Row
     margin: 40px 0;
 }
 
-.primary-status{
-    border: 2px solid #fff;
+.primary-status {
     padding: 10px;
 }
 
